@@ -5,6 +5,10 @@ class CommandType(IntEnum):
     EXIT = 1
     HELP = 2
     MOVE = 3
+    LOOK = 4
+    LOOKAT = 5
+    TAKE = 6
+    DROP = 7
 
 class Direction(IntEnum):
     N = 0
@@ -19,6 +23,7 @@ class Direction(IntEnum):
     D = 9
 
 class Command:
-    def __init__(self, commandType, direction = None):
+    def __init__(self, commandType, direction = None, target = None):
         self.commandType = commandType
         self.direction = direction
+        self.target = target
