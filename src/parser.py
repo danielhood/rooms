@@ -86,10 +86,10 @@ def parseCommand(commandInput) -> commands.Command:
         return commands.Command(commands.CommandType.MOVE, commands.Direction.U)
     elif c == 'down':
         return commands.Command(commands.CommandType.MOVE, commands.Direction.D)
-    elif c.startswith('look'):
-        return commands.Command(commands.CommandType.LOOK, parseDirection(c.partition("look ")[2]))
     elif c.startswith('look at'):
         return commands.Command(commands.CommandType.LOOKAT, None, c.partition("look at ")[2])
+    elif c.startswith('look'):
+        return commands.Command(commands.CommandType.LOOK, parseDirection(c.partition("look ")[2]))
     elif c.startswith('take'):
         return commands.Command(commands.CommandType.TAKE, None, c.partition("take ")[2])
     elif c.startswith('drop'):

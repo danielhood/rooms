@@ -35,7 +35,8 @@ class Engine:
 
         self.env.player.room = newRoom
 
-        print (self.env.player.name + " is in room " + self.env.world.rooms[self.env.player.room].name)    
+        print (f"You are in {self.env.world.rooms[self.env.player.room].name}.")
+        self.look(None)
 
     def look(self, direction):
         if (direction is None):
@@ -44,15 +45,15 @@ class Engine:
             print ("You don't see anything remarkable.")
 
     def lookat(self, item):
-        print (f"You look at the {item}")
+        print (f"You look at the {item}.")
 
     def take(self, item):
-        print (f"You take the {item}")
+        print (f"You take the {item}.")
 
     def drop(self, item):
-        print (f"You drop the {item}")
+        print (f"You drop the {item}.")
 
     def showHelp(self):
         print("Commands: help, exit, quit, look [<direction>], look at <object>, bag, inventory")
-        print("Movement: north, n, south, s, southwest, sw, left, right, up, down, ...")
+        print("Movement: north, n, south, s, southwest, sw, up, down, ...")
         print("Actions (typically <action> <object>): take, drop, eat, wear, lift, push, ...")

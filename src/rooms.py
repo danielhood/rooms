@@ -6,8 +6,12 @@ import parser
 
 def commandloop():
     while True:
+        print()
+
         commandInput = input("> ")
         command = parser.parseCommand(commandInput)
+
+        print()
 
         if not engine.processCommand(command):
             break
@@ -19,8 +23,9 @@ def main():
 
     env = environment.Environment()
     engine = engine.Engine(env)
-    
-    print("You are in a room.")
+
+    print()
+    engine.look(None)
 
     commandloop()
 
@@ -31,4 +36,6 @@ if __name__ == "__main__":
     
     main()
 
+print()
 print("Your room has disolved into nothingness and you blink out of existence.")
+print()
